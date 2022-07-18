@@ -46,6 +46,9 @@ class _Page1State extends State<Page1> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
               decoration: InputDecoration(
                   labelText: 'Password',
                   enabledBorder: OutlineInputBorder(
