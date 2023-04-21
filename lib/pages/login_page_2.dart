@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../service/auth_service.dart';
-import 'logup_s.dart';
-import 'new_s_test.dart';
 
 class LoginScreen extends StatelessWidget {
   var emailController = TextEditingController();
@@ -68,18 +65,18 @@ class LoginScreen extends StatelessWidget {
                   backgroundColor: Color.fromARGB(255, 79, 18, 211),
                 ),
                 onPressed: () async {
-                  if (await signInWithEmailAndPassword(
-                      emailController.text, passwordController.text)) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => NewScreen()),
-                    );
-                  } else {
-                    print("wrong info ");
-                  }
+                  // if (await signInWithEmailAndPassword(
+                  //     emailController.text, passwordController.text)) {
+                  //   Navigator.pushReplacement(
+                  //     context,
+                  //     MaterialPageRoute(builder: (context) => NewScreen()),
+                  //   );
+                  // } else {
+                  //   print("wrong info ");
+                  // }
 
-                  emailController.text = "";
-                  passwordController.text = "";
+                  // emailController.text = "";
+                  // passwordController.text = "";
                 },
                 child: Text(
                   'Login ',
@@ -91,10 +88,10 @@ class LoginScreen extends StatelessWidget {
           ),
           TextButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignUpScreen()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => SignUpScreen()),
+                // );
               },
               child: Text(
                 'create account!',

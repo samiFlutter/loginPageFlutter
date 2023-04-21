@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_pages/pages/login_page_1.dart';
 import 'package:login_pages/pages/login_page_2.dart';
+import 'package:login_pages/pages/monkey_login.dart';
 
 void main() {
   runApp(const MyWidget());
@@ -16,10 +17,10 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: Page1(),
-      home: SecondLoginPage(),
+      home: Page1(),
     );
   }
 }

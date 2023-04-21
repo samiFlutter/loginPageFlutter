@@ -13,6 +13,14 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
+  TextEditingController emailController = TextEditingController();
+  int image = 1;
+  updateImage() {
+    setState(() {
+      image = (emailController.text.length % 42) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +32,18 @@ class _Page1State extends State<Page1> {
           SizedBox(
             height: 80,
           ),
-          Container(height: 70, child: Image.asset('assets/flutter_logo.png')),
+          Container(
+              height: 100, child: Image.asset('assets/monkey/$image.gif')),
           SizedBox(
             height: 20,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: emailController,
+              onChanged: (String a) {
+                updateImage();
+              },
               decoration: InputDecoration(
                   labelText: 'Email',
                   enabledBorder: OutlineInputBorder(
@@ -46,6 +59,11 @@ class _Page1State extends State<Page1> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              onChanged: (String) {
+                setState(() {
+                  image = 21;
+                });
+              },
               obscureText: true,
               enableSuggestions: false,
               autocorrect: false,
